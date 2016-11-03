@@ -38,14 +38,25 @@
 %%   \insertsubmitdate
 
 \begin{titlepage}
-  \TitleBlock{\scshape\insertinstitution}
-  \TitleBlock[\bigskip]{\scshape\insertfaculty}
-  \TitleBlock{\Huge\scshape\inserttitle}
-  \TitleBlock{\scshape
-    Tesis presentada por \insertauthor \\
-    para obtener el grado de \insertdegree}
-  \TitleBlock{\insertsubmitdate}
-  \TitleBlock[\bigskip]{\insertdepartment}
+  \TitleBlock{\includegraphics[scale=0.2]{unet.jpg} }  
+  \TitleBlock{\small\insertinstitution}
+  \TitleBlock[\small\bigskip]{\insertfaculty}
+  \TitleBlock[\small\bigskip]{Decanato de Docencia}
+  \TitleBlock[\small\bigskip]{\insertdepartment}
+  \TitleBlock[\small\bigskip]{Trabajo de aplicaci\'on profesional}
+  \TitleBlock[\small\bigskip]{Proyecto especial de Grado}
+    
+ \TitleBlock{\scshape\inserttitle}
+ 
+ \begin{flushright}
+  \TitleBlock{ \small Autor(es): \insertauthor} 
+  \TitleBlock{ \small C.I.: }
+  \TitleBlock{ \small correo@gmail.com}
+  \TitleBlock{\small Tutor(es): \insertsupervisor}
+  \TitleBlock{ \small correo@gmail.com}
+ \end{flushright}
+  \TitleBlock{\small San Crist\'obal, \insertsubmitdate}
+  
 \end{titlepage}
 
 %% Nota 1:

@@ -1,4 +1,4 @@
-\documentclass[oneside,numbers,spanish]{ezthesis}
+\documentclass[oneside,12pt,numbers,spanish]{ezthesis}
 %% # Opciones disponibles para el documento #
 %%
 %% Las opciones con un (*) son las opciones predeterminadas.
@@ -10,7 +10,7 @@
 %%
 %% Tama'no de papel:
 %%   letterpaper (*)  - tama'no carta (Am'erica)
-%%   a4paper          - tama'no A4    (Europa)
+ %%   a4paper          - tama'no A4    (Europa)
 %%
 %% Formato de impresi'on:
 %%   oneside          - hojas impresas por un solo lado
@@ -40,27 +40,33 @@
 
 %% Paquetes adicionales requeridos se pueden agregar tambi'en aqu'i.
 %% Por ejemplo:
-%\usepackage{subfig}
-%\usepackage{multirow}
+\usepackage[spanish]{babel}
+\usepackage{cite}
+\usepackage{natbib} 
+\usepackage{subfig}
+\usepackage{multirow, array}
+\usepackage{graphicx} 
+\usepackage{float}  
+
 
 %% # Datos del documento #
-%% Nota que los acentos se deben escribir: \'a, \'e, \'i, etc.
+%%\documentclass[12pt]{•}%% Nota que los acentos se deben escribir: \'a, \'e, \'i, etc.
 %% La letra n con tilde es: \~n.
 
-\author{Juan Antonio Navarro P\'erez}
-\title{Ejemplo de una Tesis}
-\degree{Doctor en Ciencias}
-\supervisor{Nombre de mi Asesor}
-\institution{Universidad de Alg\'un Sitio}
-\faculty{Escuela de Ingenier\'ia y Ciencias}
-\department{Departamento de Sistemas Computacionales}
+\author{Stephanie Correa}
+\title{Desarrollo de una aplicaci\'on Web}
+\degree{Ingeniero en Inform\'atica}
+\supervisor{Tutor}
+\institution{Universidad Nacional Experimental Del T\'achira}
+\faculty{Vicerectorado Acad\'emico}
+\department{Departamento de Ingenier\'ia en Inform\'atica}
 
 %% # M'argenes del documento #
 %% 
 %% Quitar el comentario en la siguiente linea para austar los m'argenes del
 %% documento. Leer la documentaci'on de "geometry" para m'as informaci'on.
 
-%\geometry{top=40mm,bottom=33mm,inner=40mm,outer=25mm}
+\geometry{left=3cm,right=3cm,top=4cm,bottom=3cm}
 
 %% El siguiente comando agrega ligas activas en el documento para las
 %% referencias cruzadas y citas bibliogr'aficas. Tiene que ser *la 'ultima*
@@ -80,23 +86,40 @@
 %% Por cada prefacio (p.e. agradecimientos, resumen, etc.) crear
 %% un nuevo archivo e incluirlo aqu'i.
 %% Para m'as detalles y un ejemplo mirar el archivo "gracias.tex".
-\include{gracias}
+%%\include{gracias}
+\include{preliminar}
+\include{aprobacion}
 
 %% # 'Indices y listas de contenido #
 %% Quitar los comentarios en las lineas siguientes para obtener listas de
 %% figuras y cuadros/tablas.
+\pagenumbering{roman}
+\setcounter{page}{4}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\'Indice General}
 \tableofcontents
-%\listoffigures
-%\listoftables
+\renewcommand{\listtablename}{\'Indice de Tablas}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\'Indice de Tablas} % para que aparezca en el indice de contenidos
+\listoftables % indice de tablas
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\'Indice de Figuras} % para que aparezca en el indice de contenidos
+\listoffigures % indice de figuras
+
+
 
 %% # Cap'itulos #
 %% Por cada cap'itulo hay que crear un nuevo archivo e incluirlo aqu'i.
 %% Mirar el archivo "intro.tex" para un ejemplo y recomendaciones para
 %% escribir.
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Introducci\'on}
+\markboth{Introducci\'on}{Introducci\'on} % encabezado 
+
 \include{intro}
-%\include{capitulo1}
-%\include{capitulo2}
-%\include{capitulo3}
+\include{capitulo1}
+\include{capitulo2}
+\include{capitulo3}
 %\include{conclu}
 
 \appendix
@@ -108,6 +131,7 @@
 
 %% Incluir la bibliograf'ia. Mirar el archivo "biblio.bib" para m'as detales
 %% y un ejemplo.
+\bibliographystyle{apalike}
 \bibliography{biblio}
 
 \end{document}
